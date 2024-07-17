@@ -1,3 +1,18 @@
+git 
+
+git init 
+
+git add .  
+
+git status -s
+
+git commit -m "初始化项目版本"
+
+git remote add origin https://github.com/poisonyu/studyrecord.git
+
+git branch -M main 
+
+git push -u origin main 
 
 2024/6/24
 
@@ -377,7 +392,7 @@ GO111MODULE
 fmt.Sprintf 
 strconv.FormatFloat
 9.11 在 Go 程序中使用外部库
-# 用洗衣机洗衣服，没把放衣服的盆拿走，后来去拿洗好的衣服，盆就没了，真TM晦气
+
 
 
 
