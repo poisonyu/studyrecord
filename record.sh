@@ -1,3 +1,6 @@
+set https_proxy=http://127.0.0.1:7897
+set https_proxy=http://127.0.0.1:7897
+
 git 
 
 git init 
@@ -13,6 +16,10 @@ git remote add origin https://github.com/poisonyu/studyrecord.git
 git branch -M main 
 
 git push -u origin main 
+
+
+git config --global user.email "xuzhouyi433@outlook.com"
+git config --global user.name "poisonyu"
 
 2024/6/24
 
