@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 select id, mount_path, driver, cache_expiration, status, remark, modified, disabled, enable_sign, order_by, order_direction, extract_folder, web_proxy, webdav_policy, proxy_range, down_proxy_url from x_storages;
 
 alist admin token 
@@ -17,6 +18,10 @@ go
 	dir := filepath.Dir(ex)                  // tmpfs
 	jo := filepath.Join(dir, "black", "cat") // /tmpfs/black/cat
 
+=======
+set https_proxy=http://127.0.0.1:7897
+set https_proxy=http://127.0.0.1:7897
+>>>>>>> 7bccc42e1e2a5d5df1aacd4bd4ac01dbba9757b8
 
 git 
 
@@ -33,6 +38,10 @@ git remote add origin https://github.com/poisonyu/studyrecord.git
 git branch -M main 
 
 git push -u origin main 
+
+
+git config --global user.email "xuzhouyi433@outlook.com"
+git config --global user.name "poisonyu"
 
 2024/6/24
 
