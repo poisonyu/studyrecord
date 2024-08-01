@@ -1,6 +1,7 @@
 package main
 
 import (
+<<<<<<< HEAD
 	"encoding/json"
 	"fmt"
 	"os"
@@ -112,4 +113,14 @@ func main() {
 	re1, _ := json.Marshal(conf)
 	re2, _ := json.MarshalIndent(conf, "", "  ")
 	fmt.Println(string(re1), "\n", string(re2))
+=======
+	"fmt"
+	"net/url"
+)
+
+func main() {
+	// var t *url.URL
+	u, _ := url.Parse("https://httpbin.org/get?dog=kitty")
+	fmt.Println(*u)
+>>>>>>> e4c9159ccc15dc74505dcdf5cdc19a81245d040e
 }

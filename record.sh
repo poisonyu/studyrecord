@@ -1,4 +1,10 @@
-<<<<<<< HEAD
+curl "https://iw233.cn/api.php?sort=pc&type=json&num=2" -e "https://weibo.com/" -o urls.json
+
+https://tva1.sinaimg.cn/large/ec43126fgy1go5nedf2sjj225s1e04qq.jpg
+https://tva1.sinaimg.cn/large/ec43126fgy1gzp7hkhofmj22io1f0npi.jpg
+
+
+
 select id, mount_path, driver, cache_expiration, status, remark, modified, disabled, enable_sign, order_by, order_direction, extract_folder, web_proxy, webdav_policy, proxy_range, down_proxy_url from x_storages;
 
 alist admin token 
@@ -14,14 +20,14 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI4MGI1Njg2YzQ0ZGY0YjBmOGVhYjM5Nzg
 
 go 
 
-	ex, _ := os.Executable()                 // /tmpfs/paly
-	dir := filepath.Dir(ex)                  // tmpfs
-	jo := filepath.Join(dir, "black", "cat") // /tmpfs/black/cat
+ex, _ := os.Executable()                 // /tmpfs/paly
+dir := filepath.Dir(ex)                  // tmpfs
+jo := filepath.Join(dir, "black", "cat") // /tmpfs/black/cat
 
-=======
+
 set https_proxy=http://127.0.0.1:7897
 set https_proxy=http://127.0.0.1:7897
->>>>>>> 7bccc42e1e2a5d5df1aacd4bd4ac01dbba9757b8
+
 
 git 
 
@@ -177,8 +183,11 @@ curl "https://iw233.cn/api.php?sort=top&type=json&num=2" -e "https://weibo.com/"
 {"pic":["https:\/\/tva1.sinaimg.cn\/large\/ec43126fgy1h1y42j7oedj20px121hdt.jpg","https:\/\/tvax1.sinaimg.cn\/large\/ec43126fgy1h3m98tviuxj228q3f27wm.jpg"]}
 
 
+<<<<<<< HEAD
+=======
 curl "https://iw233.cn/api.php?sort=pc&type=json&num=3" -e "https://weibo.com/" -o pc_urls.txt
 
+>>>>>>> e678e945fe9010f953fb4ce6276abc8ac152d6e9
 
 wget -i urls.txt
 
