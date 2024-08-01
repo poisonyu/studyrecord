@@ -1,3 +1,9 @@
+curl "https://iw233.cn/api.php?sort=pc&type=json&num=2" -e "https://weibo.com/" -o urls.json
+
+https://tva1.sinaimg.cn/large/ec43126fgy1go5nedf2sjj225s1e04qq.jpg
+https://tva1.sinaimg.cn/large/ec43126fgy1gzp7hkhofmj22io1f0npi.jpg
+
+
 set https_proxy=http://127.0.0.1:7897
 set https_proxy=http://127.0.0.1:7897
 
@@ -153,6 +159,7 @@ wget https://iw233.cn/api.php?sort=top&num=2 --referer="https://weibo.com/"
 
 curl "https://iw233.cn/api.php?sort=top&type=json&num=2" -e "https://weibo.com/"
 {"pic":["https:\/\/tva1.sinaimg.cn\/large\/ec43126fgy1h1y42j7oedj20px121hdt.jpg","https:\/\/tvax1.sinaimg.cn\/large\/ec43126fgy1h3m98tviuxj228q3f27wm.jpg"]}
+
 
 
 wget -i urls.txt
