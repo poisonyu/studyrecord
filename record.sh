@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 curl "https://iw233.cn/api.php?sort=pc&type=json&num=2" -e "https://weibo.com/" -o urls.json
 
 https://tva1.sinaimg.cn/large/ec43126fgy1go5nedf2sjj225s1e04qq.jpg
