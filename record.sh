@@ -1,3 +1,23 @@
+select id, mount_path, driver, cache_expiration, status, remark, modified, disabled, enable_sign, order_by, order_direction, extract_folder, web_proxy, webdav_policy, proxy_range, down_proxy_url from x_storages;
+
+alist admin token 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicHdkX3RzIjoxNzIyMTI2NjMzLCJleHAiOjE3MjIzMjUwMjgsIm5iZiI6MTcyMjE1MjIyOCwiaWF0IjoxNzIyMTUyMjI4fQ.e0kxsz4idDnUHrtBP5wTHLM61Lu_QBjnWRpVzUXkGfE
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicHdkX3RzIjoxNzIyMTI2NjMzLCJleHAiOjE3MjI0ODA1NTMsIm5iZiI6MTcyMjMwNzc1MywiaWF0IjoxNzIyMzA3NzUzfQ.RA6S124iUfIHbfNpknxmLE40kqT76XTqqW30Y1I-fBU
+
+login http://localhost:5244/api/auth/login
+storage add choose a driver mount_path username password 
+
+Aliyundrive Refresh Token
+https://alist.nn.ci/tool/aliyundrive/request.html
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI4MGI1Njg2YzQ0ZGY0YjBmOGVhYjM5Nzg5YmEzMzU5YyIsImF1ZCI6Ijc2OTE3Y2NjY2Q0NDQxYzM5NDU3YTA0ZjYwODRmYjJmIiwiZXhwIjoxNzI5OTMyMzQ1LCJpYXQiOjE3MjIxNTYzNDUsImp0aSI6ImUzMzEwZDhlZTg4YzQ0ZGE4Mjc2YmFiMWM2M2YzYWU3In0.nb59EdfQj0WRHSRoWAKvD0wNpp17NF435Y99L63ld10uprO8g6WWxHKUxkCin207izF0LkugycUOecPmYr6qbA
+
+go 
+
+	ex, _ := os.Executable()                 // /tmpfs/paly
+	dir := filepath.Dir(ex)                  // tmpfs
+	jo := filepath.Join(dir, "black", "cat") // /tmpfs/black/cat
+
+
 git 
 
 git init 
@@ -146,6 +166,9 @@ wget https://iw233.cn/api.php?sort=top&num=2 --referer="https://weibo.com/"
 
 curl "https://iw233.cn/api.php?sort=top&type=json&num=2" -e "https://weibo.com/"
 {"pic":["https:\/\/tva1.sinaimg.cn\/large\/ec43126fgy1h1y42j7oedj20px121hdt.jpg","https:\/\/tvax1.sinaimg.cn\/large\/ec43126fgy1h3m98tviuxj228q3f27wm.jpg"]}
+
+
+curl "https://iw233.cn/api.php?sort=pc&type=json&num=3" -e "https://weibo.com/" -o pc_urls.txt
 
 
 wget -i urls.txt
