@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 type Config struct {
@@ -29,7 +30,9 @@ type Config struct {
 }
 
 func main() {
-
+	text := "this a test, where there is light, there is hope"
+	// This a test, where there is light, there is hope
+	fmt.Println(strings.ToUpper(text[:1]) + text[1:])
 	// os.OpenFile("")
 	// os.Open()
 	// os.Create()

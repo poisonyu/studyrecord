@@ -25,7 +25,7 @@ var disableStorageCmd = &cobra.Command{
 	Use:   "disable",
 	Short: "Disable a storage",
 	Run: func(cmd *cobra.Command, args []string) {
-		//
+		// 确保至少有一个参数
 		if len(args) < 1 {
 			utils.Log.Errorf("mount path is required")
 			return

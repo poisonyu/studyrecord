@@ -31,6 +31,7 @@ var ServerCmd = &cobra.Command{
 the address is defined in config file`,
 	Run: func(cmd *cobra.Command, args []string) {
 		Init()
+		// 延迟启动
 		if conf.Conf.DelayedStart != 0 {
 			utils.Log.Infof("delayed start for %d seconds", conf.Conf.DelayedStart)
 			time.Sleep(time.Duration(conf.Conf.DelayedStart) * time.Second)

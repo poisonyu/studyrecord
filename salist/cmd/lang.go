@@ -24,6 +24,7 @@ type KV[V any] map[string]V
 
 type Drivers KV[KV[interface{}]]
 
+// 使字符串首字母大写
 func firstUpper(s string) string {
 	if s == "" {
 		return ""
@@ -31,6 +32,7 @@ func firstUpper(s string) string {
 	return strings.ToUpper(s[:1]) + s[1:]
 }
 
+// 将字符串的分隔方式变为空格
 func convert(s string) string {
 	ss := strings.Split(s, "_")
 	ans := strings.Join(ss, " ")

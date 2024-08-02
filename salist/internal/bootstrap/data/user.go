@@ -23,6 +23,7 @@ func initUser() {
 		adminPassword = envpass
 	}
 	if err != nil {
+		// 如果没有找到admin的记录，就创建一个
 		if errors.Is(err, gorm.ErrRecordNotFound) {
 			salt := random.String(16)
 			admin = &model.User{
@@ -67,6 +68,7 @@ func initUser() {
 	updateAuthnForOldVersion()
 }
 
+// 设置pwdHash
 func hashPwdForOldVersion() {
 	users, _, err := op.GetUsers(1, -1)
 	if err != nil {
@@ -84,6 +86,7 @@ func hashPwdForOldVersion() {
 	}
 }
 
+// 设置authn
 func updateAuthnForOldVersion() {
 	users, _, err := op.GetUsers(1, -1)
 	if err != nil {

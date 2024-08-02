@@ -34,6 +34,7 @@ func setLog(l *logrus.Logger) {
 	}
 }
 
+// 初始化日志
 func Log() {
 	setLog(logrus.StandardLogger())
 	setLog(utils.Log)

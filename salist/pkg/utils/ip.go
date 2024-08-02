@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+// 返回客户端IP
 func ClientIP(r *http.Request) string {
 	xForwardedFor := r.Header.Get("X-Forwarded-For")
 	ip := strings.TrimSpace(strings.Split(xForwardedFor, ",")[0])
