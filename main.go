@@ -29,7 +29,7 @@ type Config struct {
 	// S3                    S3          `json:"s3" envPrefix:"S3_"`
 }
 
-func main() {
+func test() {
 	text := "this a test, where there is light, there is hope"
 	// This a test, where there is light, there is hope
 	fmt.Println(strings.ToUpper(text[:1]) + text[1:])
@@ -127,3 +127,11 @@ func main() {
 // 	fmt.Println(*u)
 
 // }
+
+func main() {
+	path, _ := os.Executable()
+	path = filepath.Dir(path)
+	fmt.Println("path:", path)
+	fmt.Println(filepath.Dir(path))
+
+}

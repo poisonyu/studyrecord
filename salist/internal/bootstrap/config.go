@@ -25,7 +25,10 @@ func InitConfig() {
 			flags.DataDir = filepath.Join(exPath, flags.DataDir)
 		}
 	}
-	configPath := filepath.Join(flags.DataDir, "config.json")
+	path, _ := os.Executable()
+	parentPath := filepath.Dir(filepath.Dir(path))
+
+	configPath := filepath.Join(parentPath, "data/alist/config.json")
 	log.Infof("reading config file: %s", configPath)
 	if !utils.Exists(configPath) {
 		log.Infof("config file not exists, creating default config file")
