@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"reflect"
 	"strings"
 )
 
@@ -134,4 +135,14 @@ func main() {
 	fmt.Println("path:", path)
 	fmt.Println(filepath.Dir(path))
 
+	tpath := reflect.TypeOf(path)
+	fmt.Println(tpath) // string
+	tpath.Kind()       // string
+	for i := 0; i < tpath.NumField(); i++ {
+	}
+	var a *int
+	ta := reflect.TypeOf(a)
+	fmt.Println(ta) // *int
+	ta.Kind()       // ptr
+	ta.Elem()       // int
 }

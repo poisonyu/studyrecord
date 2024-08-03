@@ -35,6 +35,8 @@ func setLog(l *logrus.Logger) {
 }
 
 // 初始化日志
+// log 输出在日志文件中，如果设置debug模式，也会输出在控制台
+// utils.Log 仅输出在控制台
 func Log() {
 	setLog(logrus.StandardLogger())
 	setLog(utils.Log)

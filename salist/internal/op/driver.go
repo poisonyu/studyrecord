@@ -43,6 +43,7 @@ func GetDriverInfoMap() map[string]driver.Info {
 	return driverInfoMap
 }
 
+// 设置driverInfoMap
 func registerDriverItems(config driver.Config, addition driver.Additional) {
 	// log.Debugf("addition of %s: %+v", config.Name, addition)
 	tAddition := reflect.TypeOf(addition)

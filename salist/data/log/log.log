@@ -38,3 +38,829 @@
 [GIN] 2024/08/02 - 10:52:36 | 200 |       997.7µs |             ::1 | GET      "/react@16.8.6/umd/react.production.min.js"
 [GIN] 2024/08/02 - 10:52:36 | 200 |       997.3µs |             ::1 | GET      "/react-dom@16.8.6/umd/react-dom.production.min.js"
 [GIN] 2024/08/02 - 10:52:36 | 200 |       1.233ms |             ::1 | GET      "/@emotion/core@10.0.6/dist/core.umd.min.js"
+[31mFATA[0m[2024-08-03 08:52:13] failed to connect database:Binary was compiled with 'CGO_ENABLED=0', go-sqlite3 requires cgo to work. This is a stub 
+[33mWARN[0m[2024-08-03 08:53:35] not enable search                            
+[36mINFO[0m[2024-08-03 08:53:35] [ali_open] token exchange: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI4MGI1Njg2YzQ0ZGY0YjBmOGVhYjM5Nzg5YmEzMzU5YyIsImF1ZCI6Ijc2OTE3Y2NjY2Q0NDQxYzM5NDU3YTA0ZjYwODRmYjJmIiwiZXhwIjoxNzMwMzQzMjczLCJpYXQiOjE3MjI1NjcyNzMsImp0aSI6ImU2MjEwNmU1YWUzZTRlNmRhOTdjZDQxYWM5ZTA0OWI2In0.dGdP0vP6gbP87xY9bV6SX0_pcYqWY1QfC1uChgb-1r4LwXqFvPdZhHe_1TFSESbdt_66Lw82Sj5Mb8PXFzRHrw -> eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI4MGI1Njg2YzQ0ZGY0YjBmOGVhYjM5Nzg5YmEzMzU5YyIsImF1ZCI6Ijc2OTE3Y2NjY2Q0NDQxYzM5NDU3YTA0ZjYwODRmYjJmIiwiZXhwIjoxNzMwMTYxMzEyLCJpYXQiOjE3MjIzODUzMTIsImp0aSI6Ijg1ODhkYTllMTIxYzQ0NzZiMDc2M2E0MDgxZDcxODgxIn0.TcrO6SNrOoqEGUjORZipNvBSJYutlNe8l5J9Roa5k0M743ZkQvjjDR6UsvFvDQ8VBbyszUxgWE-MbC5wJ8IOrQ 
+[36mINFO[0m[2024-08-03 08:53:44] closing db                                   
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.997ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[2.850ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'alist%' ORDER BY SCHEMA_NAME='alist' DESC,SCHEMA_NAME limit 1
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[2.429ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'alist' AND table_name = 'x_storages' AND table_type = 'BASE TABLE'
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[1.313ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'alist%' ORDER BY SCHEMA_NAME='alist' DESC,SCHEMA_NAME limit 1
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.998ms] [34;1m[rows:-][0m SELECT * FROM `x_storages` LIMIT 1
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[2.675ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'alist' AND table_name = 'x_storages' ORDER BY ORDINAL_POSITION
+
+2024/08/03 09:37:41 [32m
+[0m[33m[0.527ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2024/08/03 09:37:41 [32m
+[0m[33m[0.593ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'alist%' ORDER BY SCHEMA_NAME='alist' DESC,SCHEMA_NAME limit 1
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[2.999ms] [34;1m[rows:2][0m 
+SELECT
+	TABLE_NAME,
+	COLUMN_NAME,
+	INDEX_NAME,
+	NON_UNIQUE 
+FROM
+	information_schema.STATISTICS 
+WHERE
+	TABLE_SCHEMA = 'alist' 
+	AND TABLE_NAME = 'x_storages' 
+ORDER BY
+	INDEX_NAME,
+	SEQ_IN_INDEX
+
+2024/08/03 09:37:41 [32m
+[0m[33m[0.381ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2024/08/03 09:37:41 [32m
+[0m[33m[0.542ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'alist%' ORDER BY SCHEMA_NAME='alist' DESC,SCHEMA_NAME limit 1
+
+2024/08/03 09:37:41 [32m
+[0m[33m[2.681ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'alist' AND table_name = 'x_storages' AND constraint_name = 'uni_x_storages_mount_path'
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.746ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'alist%' ORDER BY SCHEMA_NAME='alist' DESC,SCHEMA_NAME limit 1
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[1.748ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'alist' AND table_name = 'x_users' AND table_type = 'BASE TABLE'
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[1.040ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'alist%' ORDER BY SCHEMA_NAME='alist' DESC,SCHEMA_NAME limit 1
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.505ms] [34;1m[rows:-][0m SELECT * FROM `x_users` LIMIT 1
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[1.461ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'alist' AND table_name = 'x_users' ORDER BY ORDINAL_POSITION
+
+2024/08/03 09:37:41 [32m
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2024/08/03 09:37:41 [32m
+[0m[33m[2.201ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'alist%' ORDER BY SCHEMA_NAME='alist' DESC,SCHEMA_NAME limit 1
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[1.635ms] [34;1m[rows:2][0m 
+SELECT
+	TABLE_NAME,
+	COLUMN_NAME,
+	INDEX_NAME,
+	NON_UNIQUE 
+FROM
+	information_schema.STATISTICS 
+WHERE
+	TABLE_SCHEMA = 'alist' 
+	AND TABLE_NAME = 'x_users' 
+ORDER BY
+	INDEX_NAME,
+	SEQ_IN_INDEX
+
+2024/08/03 09:37:41 [32m
+[0m[33m[0.504ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2024/08/03 09:37:41 [32m
+[0m[33m[1.115ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'alist%' ORDER BY SCHEMA_NAME='alist' DESC,SCHEMA_NAME limit 1
+
+2024/08/03 09:37:41 [32m
+[0m[33m[2.550ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'alist' AND table_name = 'x_users' AND constraint_name = 'uni_x_users_username'
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[1.507ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'alist%' ORDER BY SCHEMA_NAME='alist' DESC,SCHEMA_NAME limit 1
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[1.831ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'alist' AND table_name = 'x_meta' AND table_type = 'BASE TABLE'
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.505ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.774ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'alist%' ORDER BY SCHEMA_NAME='alist' DESC,SCHEMA_NAME limit 1
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.554ms] [34;1m[rows:-][0m SELECT * FROM `x_meta` LIMIT 1
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[1.457ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'alist' AND table_name = 'x_meta' ORDER BY ORDINAL_POSITION
+
+2024/08/03 09:37:41 [32m
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2024/08/03 09:37:41 [32m
+[0m[33m[1.515ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'alist%' ORDER BY SCHEMA_NAME='alist' DESC,SCHEMA_NAME limit 1
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.841ms] [34;1m[rows:2][0m 
+SELECT
+	TABLE_NAME,
+	COLUMN_NAME,
+	INDEX_NAME,
+	NON_UNIQUE 
+FROM
+	information_schema.STATISTICS 
+WHERE
+	TABLE_SCHEMA = 'alist' 
+	AND TABLE_NAME = 'x_meta' 
+ORDER BY
+	INDEX_NAME,
+	SEQ_IN_INDEX
+
+2024/08/03 09:37:41 [32m
+[0m[33m[0.701ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2024/08/03 09:37:41 [32m
+[0m[33m[1.079ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'alist%' ORDER BY SCHEMA_NAME='alist' DESC,SCHEMA_NAME limit 1
+
+2024/08/03 09:37:41 [32m
+[0m[33m[1.370ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'alist' AND table_name = 'x_meta' AND constraint_name = 'uni_x_meta_path'
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.721ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'alist%' ORDER BY SCHEMA_NAME='alist' DESC,SCHEMA_NAME limit 1
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[1.670ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'alist' AND table_name = 'x_setting_items' AND table_type = 'BASE TABLE'
+
+2024/08/03 09:37:41 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.799ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'alist%' ORDER BY SCHEMA_NAME='alist' DESC,SCHEMA_NAME limit 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.590ms] [34;1m[rows:-][0m SELECT * FROM `x_setting_items` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[1.699ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'alist' AND table_name = 'x_setting_items' ORDER BY ORDINAL_POSITION
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.686ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'alist%' ORDER BY SCHEMA_NAME='alist' DESC,SCHEMA_NAME limit 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[1.524ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'alist' AND table_name = 'x_search_nodes' AND table_type = 'BASE TABLE'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.816ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'alist%' ORDER BY SCHEMA_NAME='alist' DESC,SCHEMA_NAME limit 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[1.099ms] [34;1m[rows:-][0m SELECT * FROM `x_search_nodes` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[1.157ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'alist' AND table_name = 'x_search_nodes' ORDER BY ORDINAL_POSITION
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[0.505ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[1.523ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'alist%' ORDER BY SCHEMA_NAME='alist' DESC,SCHEMA_NAME limit 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/db.go:24
+[0m[33m[1.718ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'alist' AND table_name = 'x_search_nodes' AND index_name = 'idx_x_search_nodes_parent'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/user.go:14
+[0m[33m[0.505ms] [34;1m[rows:1][0m SELECT * FROM `x_users` WHERE `x_users`.`role` = 2 LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/user.go:14
+[0m[33m[0.706ms] [34;1m[rows:1][0m SELECT * FROM `x_users` WHERE `x_users`.`role` = 1 LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/user.go:54
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT count(*) FROM `x_users`
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/user.go:57
+[0m[33m[0.504ms] [34;1m[rows:2][0m SELECT * FROM `x_users` 
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/user.go:54
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT count(*) FROM `x_users`
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/user.go:57
+[0m[33m[0.504ms] [34;1m[rows:2][0m SELECT * FROM `x_users` 
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:12
+[0m[33m[0.533ms] [34;1m[rows:72][0m SELECT * FROM `x_setting_items`
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.521ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'version' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.059ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='dev',`help`='',`type`='string',`options`='',`group`=1,`flag`=2 WHERE `key` = 'version'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.346ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('version','dev','','string','',1,2) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[1.517ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'site_title' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.235ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='AList',`help`='',`type`='string',`options`='',`group`=1,`flag`=0 WHERE `key` = 'site_title'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.505ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('site_title','AList','','string','',1,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.684ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'announcement' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.613ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='### repo
+https://github.com/alist-org/alist',`help`='',`type`='text',`options`='',`group`=1,`flag`=0 WHERE `key` = 'announcement'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.508ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('announcement','### repo
+https://github.com/alist-org/alist','','text','',1,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.893ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'pagination_type' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.051ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='all',`help`='',`type`='select',`options`='all,pagination,load_more,auto_load_more',`group`=1,`flag`=0 WHERE `key` = 'pagination_type'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.527ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('pagination_type','all','','select','all,pagination,load_more,auto_load_more',1,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.521ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'default_page_size' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.699ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='30',`help`='',`type`='number',`options`='',`group`=1,`flag`=0 WHERE `key` = 'default_page_size'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.568ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('default_page_size','30','','number','',1,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.617ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'allow_indexed' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.646ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='false',`help`='',`type`='bool',`options`='',`group`=1,`flag`=0 WHERE `key` = 'allow_indexed'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.683ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('allow_indexed','false','','bool','',1,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.794ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'allow_mounted' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.639ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='true',`help`='',`type`='bool',`options`='',`group`=1,`flag`=0 WHERE `key` = 'allow_mounted'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.213ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('allow_mounted','true','','bool','',1,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.512ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'robots_txt' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.048ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='User-agent: *
+Allow: /',`help`='',`type`='text',`options`='',`group`=1,`flag`=0 WHERE `key` = 'robots_txt'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.690ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('robots_txt','User-agent: *
+Allow: /','','text','',1,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.653ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'logo' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.640ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='https://cdn.jsdelivr.net/gh/alist-org/logo@main/logo.svg',`help`='',`type`='text',`options`='',`group`=2,`flag`=0 WHERE `key` = 'logo'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.746ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('logo','https://cdn.jsdelivr.net/gh/alist-org/logo@main/logo.svg','','text','',2,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.654ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'favicon' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.672ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='https://cdn.jsdelivr.net/gh/alist-org/logo@main/logo.svg',`help`='',`type`='string',`options`='',`group`=2,`flag`=0 WHERE `key` = 'favicon'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.752ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('favicon','https://cdn.jsdelivr.net/gh/alist-org/logo@main/logo.svg','','string','',2,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[1.478ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'main_color' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.726ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='#1890ff',`help`='',`type`='string',`options`='',`group`=2,`flag`=0 WHERE `key` = 'main_color'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.518ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('main_color','#1890ff','','string','',2,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.559ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'home_icon' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.551ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='🏠',`help`='',`type`='string',`options`='',`group`=2,`flag`=0 WHERE `key` = 'home_icon'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.387ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('home_icon','🏠','','string','',2,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.665ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'home_container' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.653ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='max_980px',`help`='',`type`='select',`options`='max_980px,hope_container',`group`=2,`flag`=0 WHERE `key` = 'home_container'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[32.937ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('home_container','max_980px','','select','max_980px,hope_container',2,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[10.618ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'settings_layout' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.719ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='list',`help`='',`type`='select',`options`='list,responsive',`group`=2,`flag`=0 WHERE `key` = 'settings_layout'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[21.128ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('settings_layout','list','','select','list,responsive',2,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.517ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'text_types' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.031ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='txt,htm,html,xml,java,properties,sql,js,md,json,conf,ini,vue,php,py,bat,gitignore,yml,go,sh,c,cpp,h,hpp,tsx,vtt,srt,ass,rs,lrc',`help`='',`type`='text',`options`='',`group`=3,`flag`=1 WHERE `key` = 'text_types'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.626ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('text_types','txt,htm,html,xml,java,properties,sql,js,md,json,conf,ini,vue,php,py,bat,gitignore,yml,go,sh,c,cpp,h,hpp,tsx,vtt,srt,ass,rs,lrc','','text','',3,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.522ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'audio_types' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.287ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='mp3,flac,ogg,m4a,wav,opus,wma',`help`='',`type`='text',`options`='',`group`=3,`flag`=1 WHERE `key` = 'audio_types'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.623ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('audio_types','mp3,flac,ogg,m4a,wav,opus,wma','','text','',3,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.703ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'video_types' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.371ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='mp4,mkv,avi,mov,rmvb,webm,flv,m3u8',`help`='',`type`='text',`options`='',`group`=3,`flag`=1 WHERE `key` = 'video_types'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.140ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('video_types','mp4,mkv,avi,mov,rmvb,webm,flv,m3u8','','text','',3,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.505ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'image_types' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.505ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='jpg,tiff,jpeg,png,gif,bmp,svg,ico,swf,webp',`help`='',`type`='text',`options`='',`group`=3,`flag`=1 WHERE `key` = 'image_types'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.505ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('image_types','jpg,tiff,jpeg,png,gif,bmp,svg,ico,swf,webp','','text','',3,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[1.577ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'proxy_types' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.573ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='m3u8',`help`='',`type`='text',`options`='',`group`=3,`flag`=1 WHERE `key` = 'proxy_types'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.659ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('proxy_types','m3u8','','text','',3,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.643ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'proxy_ignore_headers' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.038ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='authorization,referer',`help`='',`type`='text',`options`='',`group`=3,`flag`=1 WHERE `key` = 'proxy_ignore_headers'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.340ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('proxy_ignore_headers','authorization,referer','','text','',3,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.534ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'external_previews' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[2.948ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='{}',`help`='',`type`='text',`options`='',`group`=3,`flag`=0 WHERE `key` = 'external_previews'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.845ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('external_previews','{}','','text','',3,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[1.095ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'iframe_previews' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.919ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='{
+	"doc,docx,xls,xlsx,ppt,pptx": {
+		"Microsoft":"https://view.officeapps.live.com/op/view.aspx?src=$e_url",
+		"Google":"https://docs.google.com/gview?url=$e_url&embedded=true"
+	},
+	"pdf": {
+		"PDF.js":"https://alist-org.github.io/pdf.js/web/viewer.html?file=$e_url"
+	},
+	"epub": {
+		"EPUB.js":"https://alist-org.github.io/static/epub.js/viewer.html?url=$e_url"
+	}
+}',`help`='',`type`='text',`options`='',`group`=3,`flag`=0 WHERE `key` = 'iframe_previews'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.767ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('iframe_previews','{
+	"doc,docx,xls,xlsx,ppt,pptx": {
+		"Microsoft":"https://view.officeapps.live.com/op/view.aspx?src=$e_url",
+		"Google":"https://docs.google.com/gview?url=$e_url&embedded=true"
+	},
+	"pdf": {
+		"PDF.js":"https://alist-org.github.io/pdf.js/web/viewer.html?file=$e_url"
+	},
+	"epub": {
+		"EPUB.js":"https://alist-org.github.io/static/epub.js/viewer.html?url=$e_url"
+	}
+}','','text','',3,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[1.156ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'audio_cover' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.554ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='https://jsd.nn.ci/gh/alist-org/logo@main/logo.svg',`help`='',`type`='string',`options`='',`group`=3,`flag`=0 WHERE `key` = 'audio_cover'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[4.278ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('audio_cover','https://jsd.nn.ci/gh/alist-org/logo@main/logo.svg','','string','',3,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.505ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'audio_autoplay' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.670ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='true',`help`='',`type`='bool',`options`='',`group`=3,`flag`=0 WHERE `key` = 'audio_autoplay'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.618ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('audio_autoplay','true','','bool','',3,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.521ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'video_autoplay' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.569ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='true',`help`='',`type`='bool',`options`='',`group`=3,`flag`=0 WHERE `key` = 'video_autoplay'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.315ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('video_autoplay','true','','bool','',3,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.615ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'hide_files' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.649ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='/\/README.md/i',`help`='',`type`='text',`options`='',`group`=4,`flag`=0 WHERE `key` = 'hide_files'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.592ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('hide_files','/\/README.md/i','','text','',4,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.516ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'package_download' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.787ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='true',`help`='',`type`='bool',`options`='',`group`=4,`flag`=0 WHERE `key` = 'package_download'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.629ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('package_download','true','','bool','',4,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.731ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'customize_head' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.107ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='',`help`='',`type`='text',`options`='',`group`=4,`flag`=1 WHERE `key` = 'customize_head'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.588ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('customize_head','','','text','',4,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.919ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'customize_body' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.411ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'link_expiration' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.516ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='0',`help`='',`type`='number',`options`='',`group`=4,`flag`=1 WHERE `key` = 'link_expiration'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.568ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('link_expiration','0','','number','',4,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[1.026ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'sign_all' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.593ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='true',`help`='',`type`='bool',`options`='',`group`=4,`flag`=1 WHERE `key` = 'sign_all'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.610ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('sign_all','true','','bool','',4,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.504ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'privacy_regs' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.574ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='(?:(?:\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(?:\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])
+([[:xdigit:]]{1,4}(?::[[:xdigit:]]{1,4}){7}|::|:(?::[[:xdigit:]]{1,4}){1,6}|[[:xdigit:]]{1,4}:(?::[[:xdigit:]]{1,4}){1,5}|(?:[[:xdigit:]]{1,4}:){2}(?::[[:xdigit:]]{1,4}){1,4}|(?:[[:xdigit:]]{1,4}:){3}(?::[[:xdigit:]]{1,4}){1,3}|(?:[[:xdigit:]]{1,4}:){4}(?::[[:xdigit:]]{1,4}){1,2}|(?:[[:xdigit:]]{1,4}:){5}:[[:xdigit:]]{1,4}|(?:[[:xdigit:]]{1,4}:){1,6}:)
+(?U)access_token=(.*)&',`help`='',`type`='text',`options`='',`group`=4,`flag`=1 WHERE `key` = 'privacy_regs'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.505ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('privacy_regs','(?:(?:\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(?:\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])
+([[:xdigit:]]{1,4}(?::[[:xdigit:]]{1,4}){7}|::|:(?::[[:xdigit:]]{1,4}){1,6}|[[:xdigit:]]{1,4}:(?::[[:xdigit:]]{1,4}){1,5}|(?:[[:xdigit:]]{1,4}:){2}(?::[[:xdigit:]]{1,4}){1,4}|(?:[[:xdigit:]]{1,4}:){3}(?::[[:xdigit:]]{1,4}){1,3}|(?:[[:xdigit:]]{1,4}:){4}(?::[[:xdigit:]]{1,4}){1,2}|(?:[[:xdigit:]]{1,4}:){5}:[[:xdigit:]]{1,4}|(?:[[:xdigit:]]{1,4}:){1,6}:)
+(?U)access_token=(.*)&','','text','',4,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.885ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'ocr_api' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.534ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='https://api.nn.ci/ocr/file/json',`help`='',`type`='string',`options`='',`group`=4,`flag`=0 WHERE `key` = 'ocr_api'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.620ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('ocr_api','https://api.nn.ci/ocr/file/json','','string','',4,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.562ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'filename_char_mapping' ORDER BY `x_setting_items`.`key` LIMIT 1
+[37mDEBU[0m[2024-08-03 09:37:42]C:/Users/Administrator/studyrecord/salist/internal/op/hook.go:78 github.com/alist-org/alist/v3/internal/op.init.func8() filename char mapping: map[/:|]              
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.179ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='{"/": "|"}',`help`='',`type`='text',`options`='',`group`=4,`flag`=0 WHERE `key` = 'filename_char_mapping'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.050ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('filename_char_mapping','{"/": "|"}','','text','',4,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.592ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'forward_direct_link_params' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.520ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='false',`help`='',`type`='bool',`options`='',`group`=4,`flag`=0 WHERE `key` = 'forward_direct_link_params'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.745ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('forward_direct_link_params','false','','bool','',4,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.743ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'ignore_direct_link_params' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.616ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='sign,alist_ts',`help`='',`type`='string',`options`='',`group`=4,`flag`=0 WHERE `key` = 'ignore_direct_link_params'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.697ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('ignore_direct_link_params','sign,alist_ts','','string','',4,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.104ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'webauthn_login_enabled' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.504ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='false',`help`='',`type`='bool',`options`='',`group`=4,`flag`=0 WHERE `key` = 'webauthn_login_enabled'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.606ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('webauthn_login_enabled','false','','bool','',4,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.651ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'token' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.520ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='alist-797a25ba-9524-489b-92b5-b62d57990e878uTVCYhiOG5yNyoNxmhhTeVOoMbngfXQvmxcn6nIOq0VS78BzOg7FskIY2ixje3K',`help`='',`type`='string',`options`='',`group`=0,`flag`=1 WHERE `key` = 'token'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.692ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('token','alist-797a25ba-9524-489b-92b5-b62d57990e878uTVCYhiOG5yNyoNxmhhTeVOoMbngfXQvmxcn6nIOq0VS78BzOg7FskIY2ixje3K','','string','',0,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.505ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'search_index' ORDER BY `x_setting_items`.`key` LIMIT 1
+[37mDEBU[0m[2024-08-03 09:37:42]C:/Users/Administrator/studyrecord/salist/internal/search/search.go:92 github.com/alist-org/alist/v3/internal/search.init.1.func1() searcher init, mode: none                    
+[33mWARN[0m[2024-08-03 09:37:42]C:/Users/Administrator/studyrecord/salist/internal/search/search.go:34 github.com/alist-org/alist/v3/internal/search.Init() not enable search                            
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.120ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='none',`help`='',`type`='select',`options`='database,database_non_full_text,bleve,meilisearch,none',`group`=6,`flag`=0 WHERE `key` = 'search_index'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.519ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('search_index','none','','select','database,database_non_full_text,bleve,meilisearch,none',6,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.606ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'auto_update_index' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.221ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='false',`help`='',`type`='bool',`options`='',`group`=6,`flag`=0 WHERE `key` = 'auto_update_index'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.538ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('auto_update_index','false','','bool','',6,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.568ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'ignore_paths' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.584ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'max_index_depth' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.790ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='20',`help`='max depth of index',`type`='number',`options`='',`group`=6,`flag`=1 WHERE `key` = 'max_index_depth'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.578ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('max_index_depth','20','max depth of index','number','',6,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[1.111ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'index_progress' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.274ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='{"obj_count":0,"is_done":true,"last_done_time":null,"error":""}',`help`='',`type`='text',`options`='',`group`=0,`flag`=1 WHERE `key` = 'index_progress'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.524ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('index_progress','{"obj_count":0,"is_done":true,"last_done_time":null,"error":""}','','text','',0,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.714ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'sso_login_enabled' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.642ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='false',`help`='',`type`='bool',`options`='',`group`=7,`flag`=0 WHERE `key` = 'sso_login_enabled'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.657ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('sso_login_enabled','false','','bool','',7,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.657ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'sso_login_platform' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.604ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'sso_client_id' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[1.507ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'sso_client_secret' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.653ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'sso_oidc_username_key' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.760ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='name',`help`='',`type`='string',`options`='',`group`=7,`flag`=1 WHERE `key` = 'sso_oidc_username_key'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.766ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('sso_oidc_username_key','name','','string','',7,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.505ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'sso_organization_name' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.567ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'sso_application_name' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.572ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'sso_endpoint_name' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.540ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'sso_jwt_public_key' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.630ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'sso_auto_register' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.620ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='false',`help`='',`type`='bool',`options`='',`group`=7,`flag`=1 WHERE `key` = 'sso_auto_register'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.521ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('sso_auto_register','false','','bool','',7,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.836ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'sso_default_dir' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.637ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='/',`help`='',`type`='string',`options`='',`group`=7,`flag`=1 WHERE `key` = 'sso_default_dir'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.219ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('sso_default_dir','/','','string','',7,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[1.019ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'sso_default_permission' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.452ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='0',`help`='',`type`='number',`options`='',`group`=7,`flag`=1 WHERE `key` = 'sso_default_permission'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.623ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('sso_default_permission','0','','number','',7,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.611ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'sso_compatibility_mode' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.534ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='false',`help`='',`type`='bool',`options`='',`group`=7,`flag`=0 WHERE `key` = 'sso_compatibility_mode'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.111ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('sso_compatibility_mode','false','','bool','',7,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.680ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'ldap_login_enabled' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.628ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='false',`help`='',`type`='bool',`options`='',`group`=8,`flag`=0 WHERE `key` = 'ldap_login_enabled'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.622ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('ldap_login_enabled','false','','bool','',8,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.505ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'ldap_server' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[1.209ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'ldap_manager_dn' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.034ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'ldap_manager_password' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.530ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'ldap_user_search_base' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.546ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'ldap_user_search_filter' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.018ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='(uid=%s)',`help`='',`type`='string',`options`='',`group`=8,`flag`=1 WHERE `key` = 'ldap_user_search_filter'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.593ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('ldap_user_search_filter','(uid=%s)','','string','',8,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.617ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'ldap_default_dir' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.389ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='/',`help`='',`type`='string',`options`='',`group`=8,`flag`=1 WHERE `key` = 'ldap_default_dir'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.533ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('ldap_default_dir','/','','string','',8,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.519ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'ldap_default_permission' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.442ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='0',`help`='',`type`='number',`options`='',`group`=8,`flag`=1 WHERE `key` = 'ldap_default_permission'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.481ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('ldap_default_permission','0','','number','',8,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.578ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'ldap_login_tips' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.624ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='login with ldap',`help`='',`type`='string',`options`='',`group`=8,`flag`=0 WHERE `key` = 'ldap_login_tips'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.563ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('ldap_login_tips','login with ldap','','string','',8,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.518ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 's3_access_key_id' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.639ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 's3_secret_access_key' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[1.265ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 's3_buckets' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.518ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='[]',`help`='',`type`='string',`options`='',`group`=9,`flag`=1 WHERE `key` = 's3_buckets'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.609ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('s3_buckets','[]','','string','',9,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.609ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'aria2_uri' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[1.260ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='http://localhost:18671/josnrpc',`help`='',`type`='string',`options`='',`group`=5,`flag`=1 WHERE `key` = 'aria2_uri'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.631ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('aria2_uri','http://localhost:18671/josnrpc','','string','',5,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.059ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'aria2_secret' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.049ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'qbittorrent_url' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.591ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='http://admin:adminadmin@localhost:8080/',`help`='',`type`='string',`options`='',`group`=5,`flag`=1 WHERE `key` = 'qbittorrent_url'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[2.129ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('qbittorrent_url','http://admin:adminadmin@localhost:8080/','','string','',5,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[0.506ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'qbittorrent_seedtime' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.547ms] [34;1m[rows:0][0m UPDATE `x_setting_items` SET `value`='0',`help`='',`type`='number',`options`='',`group`=5,`flag`=1 WHERE `key` = 'qbittorrent_seedtime'
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:63
+[0m[33m[0.584ms] [34;1m[rows:0][0m INSERT INTO `x_setting_items` (`key`,`value`,`help`,`type`,`options`,`group`,`flag`) VALUES ('qbittorrent_seedtime','0','','number','',5,1) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`help`=VALUES(`help`),`type`=VALUES(`type`),`options`=VALUES(`options`),`group`=VALUES(`group`),`flag`=VALUES(`flag`)
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[2.044ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'aria2_uri' ORDER BY `x_setting_items`.`key` LIMIT 1
+
+2024/08/03 09:37:42 [32mC:/Users/Administrator/studyrecord/salist/internal/db/settingitem.go:20
+[0m[33m[1.516ms] [34;1m[rows:1][0m SELECT * FROM `x_setting_items` WHERE `key` = 'aria2_secret' ORDER BY `x_setting_items`.`key` LIMIT 1
+[36mINFO[0m[2024-08-03 09:37:42]C:/Users/Administrator/studyrecord/salist/cmd/initaria2.go:31 github.com/alist-org/alist/v3/cmd.init.func6() [log]: where there is light, there is hope   
+[33mWARN[0m[2024-08-03 09:45:17] not enable search                            
+[36mINFO[0m[2024-08-03 09:45:17] [log]: where there is light, there is hope   
