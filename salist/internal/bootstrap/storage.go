@@ -10,6 +10,7 @@ import (
 	"github.com/alist-org/alist/v3/pkg/utils"
 )
 
+// 加载数据库中启用的storages
 func LoadStorages() {
 	storages, err := db.GetEnabledStorages()
 	if err != nil {

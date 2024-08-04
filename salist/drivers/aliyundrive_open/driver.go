@@ -27,6 +27,7 @@ type AliyundriveOpen struct {
 	limitLink func(ctx context.Context, file model.Obj) (*model.Link, error)
 }
 
+// 返回当前driver的config
 func (d *AliyundriveOpen) Config() driver.Config {
 	return config
 }

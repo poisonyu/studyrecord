@@ -129,7 +129,7 @@ func test() {
 
 // }
 
-func main() {
+func test2() {
 	path, _ := os.Executable()
 	path = filepath.Dir(path)
 	fmt.Println("path:", path)
@@ -145,4 +145,95 @@ func main() {
 	fmt.Println(ta) // *int
 	ta.Kind()       // ptr
 	ta.Elem()       // int
+}
+
+type RootID struct {
+	RootFolderID string `json:"root_folder_id"`
+}
+
+func (r RootID) GetRootId() string {
+	return r.RootFolderID
+}
+
+type Addition struct {
+	DriveType string `json:"drive_type" type:"select" options:"default,resource,backup" default:"default"`
+	RootID
+	RefreshToken       string `json:"refresh_token" require:"true"`
+	OrderBy            string `json:"order_by" type:select" options:"name,size,update_at,create_at"`
+	OrderDirection     string `json:"order_direction" type:"select" options:"ASC,DESC"`
+	OauthTokenURL      string `json:"oauth_token_url" default:"https://api-cf.nn.ci/alist/ali_open/token"`
+	ClientID           string `json:"client_id" required:"false" help:"Keep it empty if you don't have one"`
+	ClientSecret       string `json:"client_secret" required:"false" help:"Keep it empty if you don't have one"`
+	RemoveWay          string `json:"remove_way" required:"true" type:"select" options:"trash,delete"`
+	RapidUpload        bool   `json:"rapid_upload" help:"If you enable this option, the file will be uploaded to the server first, so the progress will be incorrect"`
+	InternalUpload     bool   `json:"internal_upload" help:"If you are using Aliyun ECS is located in Beijing, you can turn it on to boost the upload speed"`
+	LIVPDownloadFormat string `json:"livp_download_format" type:"select" options:"jpeg,mov" default:"jpeg"`
+	AccessToken        string
+}
+type AliyundriveOpen struct {
+	Addition
+}
+
+type Item struct {
+	Name     string `json:"name"`
+	Type     string `json:"type"`
+	Default  string `json:"default"`
+	Options  string `json:"options"`
+	Required bool   `json:"required"`
+	Help     string `json:"help"`
+}
+
+func registerDriverItems(addition interface{}) {
+	tAddition := reflect.TypeOf(addition) // main.Addition  *main.Addition
+	for tAddition.Kind() == reflect.Pointer {
+		tAddition = tAddition.Elem()
+	}
+	additionalItems := getAdditionalItems(tAddition, "root")
+	fmt.Println("tAddition:", tAddition)
+	fmt.Println("Kind:", tAddition.Kind())
+	//fmt.Println("Elem:", tAddition.Elem())
+	fmt.Println(additionalItems)
+}
+func getAdditionalItems(t reflect.Type, defaultRoot string) []Item {
+	var items []Item
+	for i := 0; i < t.NumField(); i++ {
+		field := t.Field(i)
+		if field.Anonymous { // field.Type.Kind() == reflect.Struct
+			items = append(items, getAdditionalItems(field.Type, defaultRoot)...)
+			continue
+		}
+		tag := field.Tag
+		// tag.Lookup tag.Get 返回key对应的value，没有key，返回""
+		// tag.Lookup 判断是否有key,有就返回key对应的value
+		name, ok := tag.Lookup("json")
+		if !ok {
+			continue
+		}
+		item := Item{
+			Name:     name,
+			Type:     field.Type.Kind().String(),
+			Default:  tag.Get("default"),
+			Options:  tag.Get("options"),
+			Required: tag.Get("required") == "true",
+			Help:     tag.Get("help"),
+		}
+		if tag.Get("type") == "" {
+			item.Type = tag.Get("type")
+		}
+		if item.Name == "root_folder_id" || item.Name == "root_folder_path" {
+			if item.Default == "" {
+				item.Default = defaultRoot
+			}
+			item.Required = item.Default != ""
+		}
+
+		items = append(items, item)
+		//reflect.StructField
+		//fmt.Println(i, field)
+	}
+	return items
+}
+func main() {
+	a := new(AliyundriveOpen)
+	registerDriverItems(a.Addition)
 }

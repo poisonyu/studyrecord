@@ -23,6 +23,7 @@ func RegisterDriver(driver DriverConstructor) {
 	driverMap[tempConfig.Name] = driver
 }
 
+// 通过driver name获取构造对应driver的方法
 func GetDriver(name string) (DriverConstructor, error) {
 	n, ok := driverMap[name]
 	if !ok {
@@ -59,6 +60,7 @@ func registerDriverItems(config driver.Config, addition driver.Additional) {
 	}
 }
 
+// 根据driver的config配置item，表单数据
 func getMainItems(config driver.Config) []driver.Item {
 	items := []driver.Item{{
 		Name:     "mount_path",
@@ -142,6 +144,8 @@ func getMainItems(config driver.Config) []driver.Item {
 	})
 	return items
 }
+
+// 把Addition结构体转换为item，表单数据
 func getAdditionalItems(t reflect.Type, defaultRoot string) []driver.Item {
 	var items []driver.Item
 	for i := 0; i < t.NumField(); i++ {
@@ -151,6 +155,8 @@ func getAdditionalItems(t reflect.Type, defaultRoot string) []driver.Item {
 			continue
 		}
 		tag := field.Tag
+		// tag.Lookup tag.Get 返回key对应的value，没有key，返回""
+		// tag.Lookup 判断是否有key,有就返回key对应的value
 		ignore, ok1 := tag.Lookup("ignore")
 		name, ok2 := tag.Lookup("json")
 		if (ok1 && ignore == "true") || !ok2 {
@@ -164,6 +170,7 @@ func getAdditionalItems(t reflect.Type, defaultRoot string) []driver.Item {
 			Required: tag.Get("required") == "true",
 			Help:     tag.Get("help"),
 		}
+		// 给item设置具体的Type
 		if tag.Get("type") != "" {
 			item.Type = tag.Get("type")
 		}

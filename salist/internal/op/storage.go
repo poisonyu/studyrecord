@@ -75,6 +75,7 @@ func LoadStorage(ctx context.Context, storage model.Storage) error {
 	if err != nil {
 		return errors.WithMessage(err, "failed get driver new")
 	}
+	// 返回driver的实例
 	storageDriver := driverNew()
 
 	err = initStorage(ctx, storage, storageDriver)
