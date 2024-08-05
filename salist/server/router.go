@@ -21,6 +21,7 @@ func Init(e *gin.Engine) {
 	}
 	Cors(e)
 	g := e.Group(conf.URL.Path)
+	// 使用https请求
 	if conf.Conf.Scheme.HttpPort != -1 && conf.Conf.Scheme.HttpsPort != -1 && conf.Conf.Scheme.ForceHttps {
 		e.Use(middlewares.ForceHttps)
 	}
@@ -163,9 +164,12 @@ func _fs(g *gin.RouterGroup) {
 	g.POST("/add_offline_download", handles.AddOfflineDownload)
 }
 
+// 设置跨域中间件
 func Cors(r *gin.Engine) {
+	// 返回跨域默认配置
 	config := cors.DefaultConfig()
 	//config.AllowAllOrigins = true
+	// 设置跨域
 	config.AllowOrigins = conf.Conf.Cors.AllowOrigins
 	config.AllowHeaders = conf.Conf.Cors.AllowHeaders
 	config.AllowMethods = conf.Conf.Cors.AllowMethods

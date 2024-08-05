@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"net/url"
 	"os"
 	"path/filepath"
 	"reflect"
@@ -236,4 +237,9 @@ func getAdditionalItems(t reflect.Type, defaultRoot string) []Item {
 func main() {
 	a := new(AliyundriveOpen)
 	registerDriverItems(a.Addition)
+	escapePath := url.PathEscape("my/cool+blog&about,stuff") // my%2Fcool+blog&about%2Cstuff
+	fmt.Println("escapePath:", escapePath)
+	// 将 ％AB 转换为字节 0xAB
+	path, _ := url.PathUnescape(escapePath) // my/cool+blog&about,stuff
+	fmt.Println("unescapePath:", path)
 }

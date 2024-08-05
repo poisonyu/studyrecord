@@ -864,3 +864,17 @@ Allow: /','','text','',1,0) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`),`hel
 [36mINFO[0m[2024-08-03 09:37:42]C:/Users/Administrator/studyrecord/salist/cmd/initaria2.go:31 github.com/alist-org/alist/v3/cmd.init.func6() [log]: where there is light, there is hope   
 [33mWARN[0m[2024-08-03 09:45:17] not enable search                            
 [36mINFO[0m[2024-08-03 09:45:17] [log]: where there is light, there is hope   
+[31mFATA[0m[2024-08-05 14:59:56] failed to connect database:Binary was compiled with 'CGO_ENABLED=0', go-sqlite3 requires cgo to work. This is a stub 
+[33mWARN[0m[2024-08-05 15:00:32] not enable search                            
+[36mINFO[0m[2024-08-05 15:00:32] [ali_open] token exchange: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI4MGI1Njg2YzQ0ZGY0YjBmOGVhYjM5Nzg5YmEzMzU5YyIsImF1ZCI6Ijc2OTE3Y2NjY2Q0NDQxYzM5NDU3YTA0ZjYwODRmYjJmIiwiZXhwIjoxNzMwMTYxMzEyLCJpYXQiOjE3MjIzODUzMTIsImp0aSI6Ijg1ODhkYTllMTIxYzQ0NzZiMDc2M2E0MDgxZDcxODgxIn0.TcrO6SNrOoqEGUjORZipNvBSJYutlNe8l5J9Roa5k0M743ZkQvjjDR6UsvFvDQ8VBbyszUxgWE-MbC5wJ8IOrQ -> eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI4MGI1Njg2YzQ0ZGY0YjBmOGVhYjM5Nzg5YmEzMzU5YyIsImF1ZCI6Ijc2OTE3Y2NjY2Q0NDQxYzM5NDU3YTA0ZjYwODRmYjJmIiwiZXhwIjoxNzMwMTYxMzEyLCJpYXQiOjE3MjIzODUzMTIsImp0aSI6Ijg1ODhkYTllMTIxYzQ0NzZiMDc2M2E0MDgxZDcxODgxIn0.TcrO6SNrOoqEGUjORZipNvBSJYutlNe8l5J9Roa5k0M743ZkQvjjDR6UsvFvDQ8VBbyszUxgWE-MbC5wJ8IOrQ 
+[GIN] 2024/08/05 - 15:01:50 | 200 |       456.5µs |             ::1 | GET      "/i/test"
+[GIN] 2024/08/05 - 15:02:18 | 200 |       744.2µs |             ::1 | GET      "/i/test/dog"
+[GIN] 2024/08/05 - 15:02:18 | 200 |       393.5µs |             ::1 | GET      "/react@16.8.6/umd/react.production.min.js"
+[GIN] 2024/08/05 - 15:02:18 | 200 |       504.4µs |             ::1 | GET      "/react-dom@16.8.6/umd/react-dom.production.min.js"
+[GIN] 2024/08/05 - 15:02:18 | 200 |       464.3µs |             ::1 | GET      "/@emotion/core@10.0.6/dist/core.umd.min.js"
+[GIN] 2024/08/05 - 15:20:00 | 200 |            0s |             ::1 | GET      "/"
+[GIN] 2024/08/05 - 15:20:00 | 200 |            0s |             ::1 | GET      "/react@16.8.6/umd/react.production.min.js"
+[GIN] 2024/08/05 - 15:20:00 | 200 |       506.7µs |             ::1 | GET      "/react-dom@16.8.6/umd/react-dom.production.min.js"
+[GIN] 2024/08/05 - 15:20:00 | 200 |     14.7301ms |             ::1 | GET      "/@emotion/core@10.0.6/dist/core.umd.min.js"
+[GIN] 2024/08/05 - 15:20:03 | 200 |       937.2µs |             ::1 | GET      "/s3/"
+[36mINFO[0m[2024-08-05 15:40:44] closing db                                   
